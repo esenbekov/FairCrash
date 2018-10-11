@@ -1,9 +1,7 @@
 package de.fh_zwickau.faircrash;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
+import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,8 +11,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import de.fh_zwickau.faircrash.fragments.FragmentCompanies;
+import de.fh_zwickau.faircrash.fragments.FragmentMain;
+import de.fh_zwickau.faircrash.fragments.FragmentTimetable;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    FragmentMain fragmentMain;
+    FragmentCompanies fragmentCompanies;
+    FragmentTimetable fragmentTimetable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +37,11 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        fragmentMain = new FragmentMain();
+        fragmentCompanies = new FragmentCompanies();
+        fragmentTimetable = new FragmentTimetable();
+
     }
 
     @Override
@@ -58,7 +69,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_about) {
+            return true;
+        } else if (id == R.id.action_refresh) {
             return true;
         }
 
@@ -71,11 +84,19 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_companies) {
-            // Handle the camera action
-        } else if (id == R.id.nav_timetable) {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
-        }
+        if (id == R.id.nav_main) {
+            // Handle the main action
+            fragmentTransaction.replace(R.id.container, fragmentMain);
+        } else if (id == R.id.nav_companies) {
+            // Handle the companies action
+            fragmentTransaction.replace(R.id.container, fragmentCompanies);
+        } else if (id == R.id.nav_timetable) {
+            // Handle the timetable action
+            fragmentTransaction.replace(R.id.container, fragmentTimetable);
+        } fragmentTransaction.commit();
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

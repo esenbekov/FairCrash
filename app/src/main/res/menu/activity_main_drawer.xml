@@ -10,15 +10,15 @@
         <item
             android:id="@+id/nav_main"
             android:icon="@mipmap/ic_launcher_round"
-            android:title="Main" />
+            android:title="@string/main_item" />
         <item
             android:id="@+id/nav_companies"
             android:icon="@mipmap/ic_launcher_round"
-            android:title="Companies" />
+            android:title="@string/companies_item" />
         <item
             android:id="@+id/nav_timetable"
             android:icon="@mipmap/ic_launcher_round"
-            android:title="Timetable" />
+            android:title="@string/timetable_item" />
 
     </group>
 
