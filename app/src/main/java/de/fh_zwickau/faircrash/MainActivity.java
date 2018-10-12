@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity
 
 
     //жддл
+    //кот
     FragmentMain fragmentMain;
     FragmentCompanies fragmentCompanies;
     FragmentTimetable fragmentTimetable;
