@@ -17,13 +17,7 @@ import de.fh_zwickau.faircrash.fragments.FragmentTimetable;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    //лох
-    //имч
-    //dfg
 
-
-    //жддл
-    //кот
     FragmentMain fragmentMain;
     FragmentCompanies fragmentCompanies;
     FragmentTimetable fragmentTimetable;
