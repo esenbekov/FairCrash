@@ -10,8 +10,10 @@
     <string name="main_item">Home</string>
     <string name="companies_item">Company</string>
     <string name="timetable_item">Time table</string>
+    <string name="date">16.10.2018"</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="time">09:00-14:00</string>
 
 </resources>
