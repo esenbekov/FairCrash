@@ -7,10 +7,20 @@
 
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/companies_item"
-        android:textSize="20sp" />
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/simpleListView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:divider="#f00"
+            android:dividerHeight="1dp"
+            android:listSelector="#0f0"
+            android:footerDividersEnabled="false"/>
+    </LinearLayout>
 
 </FrameLayout>

@@ -1,5 +1,6 @@
 package de.fh_zwickau.faircrash.fragments;
 
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -20,7 +21,7 @@ import de.fh_zwickau.faircrash.R;
  * Use the {@link FragmentMain#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentMain extends Fragment implements View.OnClickListener {
+public class FragmentMain extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -67,15 +68,7 @@ public class FragmentMain extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-
-        Button btnCompany = (Button) rootView.findViewById(R.id.btn_company);
-        Button btnTimetable = (Button) rootView.findViewById(R.id.btn_timetable);
-
-        btnCompany.setOnClickListener(this);
-        btnTimetable.setOnClickListener(this);
-
-        return rootView;
+        return inflater.inflate(R.layout.fragment_main, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -103,10 +96,6 @@ public class FragmentMain extends Fragment implements View.OnClickListener {
         mListener = null;
     }
 
-    @Override
-    public void onClick(View v) {
-        Toast.makeText(getActivity(), "Вы нажали кнопку", Toast.LENGTH_SHORT).show();
-    }
 
     /**
      * This interface must be implemented by activities that contain this
