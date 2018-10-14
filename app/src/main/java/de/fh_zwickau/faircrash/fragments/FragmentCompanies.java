@@ -7,6 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 import de.fh_zwickau.faircrash.R;
 
@@ -29,6 +33,7 @@ public class FragmentCompanies extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
 
     public FragmentCompanies() {
         // Required empty public constructor
@@ -66,6 +71,24 @@ public class FragmentCompanies extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_companies, container, false);
+
+        //String countryList [] = {"India", "China", "Australia", "Portugle", "America", "NewZealand"};
+        /*
+        ArrayList<String> item = new ArrayList<>();
+        item.add("Google");
+        item.add("Apple");
+        item.add("Samsung");
+        item.add("Lenovo");
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext(),
+                R.layout.fragment_companies,
+                R.id.textView,
+                item);
+
+        ListView simpleList = (ListView) rootView.findViewById(R.id.simpleListView);
+        simpleList.setAdapter(arrayAdapter);
+        return rootView;
+        */
     }
 
     // TODO: Rename method, update argument and hook method into UI event
